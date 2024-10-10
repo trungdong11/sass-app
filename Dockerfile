@@ -29,16 +29,16 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Create the mini vm's code directory
-RUN mkdir -p /cfehome
+RUN mkdir -p /cfehome/cfehome
 
 # Set the working directory to that same code directory
-WORKDIR /cfehome
+WORKDIR /cfehome/cfehome
 
 # Copy the requirements file into the container
 COPY requirements.txt /tmp/requirements.txt
 
 # copy the project code into the container's working directory
-COPY ./src /cfehome/
+COPY ./src /cfehome/cfehome
 
 # Install the Python project requirements
 RUN pip install -r /tmp/requirements.txt
